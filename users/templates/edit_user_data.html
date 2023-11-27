@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit User Data
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Edit</button>
+    {{ request.user }}
+
+</form>
+<a href="{% url 'profile' %}" class="btn btn-outline-secondary" style="margin-top: 7px;">Back to Profile</a>
+{% endblock %}
